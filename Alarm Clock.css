@@ -1,0 +1,110 @@
+*, *::after,*::before{
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(ellipse at center,  #0a2e38  0%, #000000 70%);
+    /* background: #0f3854; */
+}
+.Alarm{
+    margin: 3rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    height: 5rem;
+    /* opacity: 0.7; */
+    /* padding: 1rem 4rem; */
+    inset: 0 0 0 30%;
+    /* background-color: rgba(22, 22, 21, 0.7); */
+    box-shadow: -4px -4px 10px rgba(5, 87, 227, 0.547),
+    inset 4px 4px 10px rgba(23, 32, 196, 0.5),
+    inset -4px -4px 10px rgba(67, 67, 67, 0.3),
+    4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+#clock{
+    align-items: center;
+    font-size: 25px;
+    color: rgb(250, 250, 250);
+    text-shadow: 0 0 20px rgba(10, 175, 230, 1),  0 0 20px rgb(10, 175, 230);
+}
+main{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5rem;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-items: center;
+}
+.clock-circle{
+    display: flex;
+    width: 350px;
+    height: 350px;
+    justify-content: center;
+    align-items: center;
+    background: url(http://samuel-garcia.site/img/clock-sam.png);
+    background-size: cover;
+    border: 4px solid #191919;
+    border-radius: 50%;
+    box-shadow: -4px -4px 10px rgba(212, 32, 83, 0.428),
+    inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+    inset -4px -4px 10px rgba(67, 67, 67, 0.3),
+    4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+.clock-face{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* transform: translateY(-30px); */
+    transform: translateX(40px);
+}
+.hand {
+    width: 38%;
+    height: 6px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    transform: rotate(90deg);
+    transform-origin: 100%;
+  }
+  .clock-circle::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #a92153;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+    inset -4px -4px 10px rgba(67, 67, 67, 0.3);
+    border-radius: 50%;
+    z-index: 1;
+}
+.hour-hand{
+    position: absolute;
+    background: #a92153;
+    border-radius: 6px 6px 0 0;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+    inset -4px -4px 10px rgba(67, 67, 67, 0.3); 
+}
+.min-hand{
+    background: black;
+    border-radius: 6px 6px 0 0;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+    inset -4px -4px 10px rgba(67, 67, 67, 0.3);
+}
+.second-hand{
+    background: #2153a9;
+    border-radius: 6px 6px 0 0;
+    box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+    inset -4px -4px 10px rgba(67, 67, 67, 0.3); 
+}
+
+@media (max-width: 750px) and (min-width: 365px){
+    main{
+        flex-direction: column-reverse;
+        gap: 0;
+    }
+}
